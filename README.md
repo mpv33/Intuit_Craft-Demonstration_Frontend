@@ -1,72 +1,157 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Sports Day Event Registration
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+This ReactJS web app allows users to register for events during a Sports Day. Users can view a list of events, select events to participate in, and see a separate list of their selected events. The app handles constraints such as limiting the number of selected events to three and ensuring no time conflicts between selected events.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. **Event List**: Displays a list of all events in a card tile format.
+2. **Event Details**: Each event card displays the event name, category, and timings.
+3. **Select/Deselect Events**: Users can select an event from the event list or deselect it from their selected events list.
+4. **Selected Events**: Shows a separate list of all selected events on the right-hand side of the screen.
+5. **Constraints Handling**: 
+   - Users can select a maximum of 3 events.
+   - Users cannot select events that conflict with the timings of already selected events.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Mock API
 
-### `npm test`
+- The events data can be fetched from a mock API:
+  - URL: `https://run.mocky.io/v3/2744c231-8991-4ae8-bc45-1f645437585a`
+- Alternatively, you can use the provided mock data in the application.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Mock Data
 
-### `npm run build`
+```json
+[
+  {
+    "id": 1,
+    "event_name": "Butterfly 100M",
+    "event_category": "Swimming",
+    "start_time": "2022-12-17 13:00:00",
+    "end_time": "2022-12-17 14:00:00"
+  },
+  {
+    "id": 2,
+    "event_name": "Backstroke 100M",
+    "event_category": "Swimming",
+    "start_time": "2022-12-17 13:30:00",
+    "end_time": "2022-12-17 14:30:00"
+  },
+  {
+    "id": 3,
+    "event_name": "Freestyle 400M",
+    "event_category": "Swimming",
+    "start_time": "2022-12-17 15:00:00",
+    "end_time": "2022-12-17 16:00:00"
+  },
+  {
+    "id": 4,
+    "event_name": "High Jump",
+    "event_category": "Athletics",
+    "start_time": "2022-12-17 13:00:00",
+    "end_time": "2022-12-17 14:00:00"
+  },
+  {
+    "id": 5,
+    "event_name": "Triple Jump",
+    "event_category": "Athletics",
+    "start_time": "2022-12-17 16:00:00",
+    "end_time": "2022-12-17 17:00:00"
+  },
+  {
+    "id": 6,
+    "event_name": "Long Jump",
+    "event_category": "Athletics",
+    "start_time": "2022-12-17 17:00:00",
+    "end_time": "2022-12-17 18:00:00"
+  },
+  {
+    "id": 7,
+    "event_name": "100M Sprint",
+    "event_category": "Athletics",
+    "start_time": "2022-12-17 17:00:00",
+    "end_time": "2022-12-17 18:00:00"
+  },
+  {
+    "id": 8,
+    "event_name": "Lightweight 60kg",
+    "event_category": "Boxing",
+    "start_time": "2022-12-17 18:00:00",
+    "end_time": "2022-12-17 19:00:00"
+  },
+  {
+    "id": 9,
+    "event_name": "Middleweight 75 kg",
+    "event_category": "Boxing",
+    "start_time": "2022-12-17 19:00:00",
+    "end_time": "2022-12-17 20:00:00"
+  },
+  {
+    "id": 10,
+    "event_name": "Heavyweight 91kg",
+    "event_category": "Boxing",
+    "start_time": "2022-12-17 20:00:00",
+    "end_time": "2022-12-17 22:00:00"
+  }
+]
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Prerequisites
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Node.js
+- npm (Node Package Manager)
 
-### `npm run eject`
+### Installation
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd <repository-folder>
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Install the dependencies:
+   ```bash
+   npm install
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Running the App
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Start the development server:
+   ```bash
+   npm start
+   ```
 
-## Learn More
+2. Open your browser and go to `http://localhost:3000`.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Project Structure
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+src/
+|-- components/
+|   |-- EventCard.js
+|-- App.js
+|-- index.css
+|-- index.js
+```
 
-### Code Splitting
+- **components/EventCard.js**: Component for rendering individual event cards.
+- **App.js**: Main component that handles event selection and displays the event lists.
+- **index.css**: Custom styles using Tailwind CSS.
+- **index.js**: Entry point of the application.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Custom Styles
 
-### Analyzing the Bundle Size
+This project uses Tailwind CSS for styling. You can customize the styles by modifying the `index.css` file.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Tooltips
 
-### Making a Progressive Web App
+Tooltips are used to provide feedback to users when they try to select more than 3 events or when there is a timing conflict. Tooltips are implemented using the `react-tooltip` package.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Constraints Handling
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# Intuit-Craft-Demonstration---SE2---Frontend
-# Intuit_Craft-Demonstration_Frontend
+- Users can select a maximum of 3 events.
+- Users cannot select events that have conflicting timings with already selected events.
