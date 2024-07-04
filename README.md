@@ -155,6 +155,7 @@ Tooltips are used to provide feedback to users when they try to select more than
 - Users can select a maximum of 3 events.
 - Users cannot select events that have conflicting timings with already selected events.
 
+## Deployed url : https://intuit-frontend-test.vercel.app/
 ## Screenshots
 
 ![Event List- Avaialble/Selected](/events.png)
