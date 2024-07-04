@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useState, useEffect } from 'react';
 import './index.css';
 import EventCard from './components/EventCard';
@@ -21,7 +20,6 @@ const App = () => {
   const [selectedEvents, setSelectedEvents] = useState([]);
 
   useEffect(() => {
-    // Fetch the events data
     setEvents(mockData);
   }, []);
 
@@ -30,10 +28,14 @@ const App = () => {
   };
 
   const handleSelect = (event) => {
-    if (selectedEvents.includes(event)) {
+    const isAlreadySelected = selectedEvents.some(e => e.id === event.id);
+
+    if (isAlreadySelected) {
       setSelectedEvents(selectedEvents.filter(e => e.id !== event.id));
     } else {
-      if (selectedEvents.length < 3 && !selectedEvents.some(e => isConflicting(e, event))) {
+      const hasConflicts = selectedEvents.some(e => isConflicting(e, event));
+      
+      if (selectedEvents.length < 3 && !hasConflicts) {
         setSelectedEvents([...selectedEvents, event]);
       }
     }
@@ -45,12 +47,14 @@ const App = () => {
         <h2 className="text-2xl font-bold mb-4">Available Events</h2>
         <div className="space-y-4">
           {events.map(event => {
-            const isSelected = selectedEvents.includes(event);
-            const isDisabled = selectedEvents.length >= 3 || selectedEvents.some(e => isConflicting(e, event));
+            const isSelected = selectedEvents.some(e => e.id === event.id);
+            const hasConflicts = selectedEvents.some(e => isConflicting(e, event));
+            const isDisabled = selectedEvents.length >= 3 || hasConflicts;
+
             let tooltipMessage = '';
             if (selectedEvents.length >= 3) {
               tooltipMessage = 'You cannot select more than 3 events.';
-            } else if (selectedEvents.some(e => isConflicting(e, event))) {
+            } else if (hasConflicts) {
               tooltipMessage = 'This event conflicts with one of your selected events.';
             }
 
