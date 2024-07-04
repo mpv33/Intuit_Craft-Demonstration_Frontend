@@ -1,3 +1,4 @@
+Here's a professional README.md for the Sports Day Event Registration project, including instructions and an example project structure:
 
 # Sports Day Event Registration
 
@@ -109,8 +110,8 @@ This ReactJS web app allows users to register for events during a Sports Day. Us
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
-   cd <repository-folder>
+   git clone https://github.com/mpv33/Intuit_Craft-Demonstration_Frontend.git
+   cd Intuit_Craft-Demonstration_Frontend
    ```
 
 2. Install the dependencies:
@@ -155,3 +156,11 @@ Tooltips are used to provide feedback to users when they try to select more than
 
 - Users can select a maximum of 3 events.
 - Users cannot select events that have conflicting timings with already selected events.
+
+## Screenshots
+
+![Event List- Avaialble/Selected](/events.png)
+*Event List displaying available events*
+
+
+These screenshots provide a visual overview of the app's functionality and interface. Ensure you add actual screenshots in the `screenshots` directory of your project.
