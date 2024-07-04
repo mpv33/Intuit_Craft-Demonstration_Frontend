@@ -1,6 +1,4 @@
-Here's a professional README.md for the Sports Day Event Registration project, including instructions and an example project structure:
-
-# Sports Day Event Registration
+# Sports Day Event Registration | Intuit | Frontend | SE-2
 
 ## Overview
 
